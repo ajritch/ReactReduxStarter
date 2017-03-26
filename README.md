@@ -2,7 +2,7 @@
 
 This is a simple starter package, pre-loaded with React and Redux dependencies. Use this as a template to build out your applications. As of 3/2017, this is up-to-date with the most recent stable releases.
 
-###Getting Started###
+### Getting Started
 
 Clone this repository, install the dependencies, and start the development server:
 
@@ -15,7 +15,7 @@ Clone this repository, install the dependencies, and start the development serve
 Navigate to http://localhost:8080 in your browser to view the application.
 
 
-###Deployment###
+### Deployment
 
 This project can be deployed as-is on Heroku; just make sure that the following two lines are included in the "scripts" object of your package.json file:
 
@@ -26,7 +26,7 @@ This project can be deployed as-is on Heroku; just make sure that the following 
 
 Note that the script `"dev_start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"` is only used to start a local server for development and can be replaced with `node server.js` calls instead.
 
-####server.js####
+#### server.js
 
 Your server.js file contains all of the information necessary to start a server and direct the browser to your content at the specified port:
 

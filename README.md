@@ -10,11 +10,40 @@ Clone this repository, install the dependencies, and start the development serve
 	> git clone https://github.com/ajritch/ReactReduxStarter.git
 	> cd ReactReduxStarter
 	> npm install
-	> npm start
+	> npm run dev_start
 ```
 Navigate to http://localhost:8080 in your browser to view the application.
 
-###Coming Soon###
 
--routing
--deployment instructions
+###Deployment###
+
+This project can be deployed as-is on Heroku; just make sure that the following two lines are included in the "scripts" object of your package.json file:
+
+```
+	"start": "node server.js",
+    "postinstall": "webpack -p",
+```
+
+Note that the script `"dev_start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"` is only used to start a local server for development and can be replaced with `node server.js` calls instead.
+
+####server.js####
+
+Your server.js file contains all of the information necessary to start a server and direct the browser to your content at the specified port:
+
+```
+// server.js
+const express = require('express');
+const path = require('path');
+const port = process.env.PORT || 8080;
+
+const app = express();
+
+app.use(express.static(__dirname));
+
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'index.html'))
+});
+
+app.listen(port);
+console.log('server listening on port 8080');
+```

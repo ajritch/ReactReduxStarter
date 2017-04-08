@@ -15,13 +15,25 @@ Clone this repository, install the dependencies, and start the development serve
 Navigate to http://localhost:8080 in your browser to view the application.
 
 
+### Routing
+
+To enable multiple routes in your application, simply add route components to your routes.js file. For example, to add a route to an "About" component, and add `{this.props.children}` to the JSX in your App.js file.
+
+```
+<Route path = '/' component = {App}>
+	{/* put nested routes here */}
+	<Route path = '/about' component = {About} />
+</Route>
+```
+
+
 ### Deployment
 
 This project can be deployed as-is on Heroku; just make sure that the following two lines are included in the "scripts" object of your package.json file:
 
 ```
-	"start": "node server.js",
-    "postinstall": "webpack -p",
+"start": "node server.js",
+"postinstall": "webpack -p",
 ```
 
 Note that the script `"dev_start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"` is only used to start a local server for development and can be replaced with `node server.js` calls instead.

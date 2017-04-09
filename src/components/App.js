@@ -5,7 +5,7 @@ class App extends Component {
 		return (
 			<div>
 				<h1>React/Redux Starter App</h1>
-				<p>Get started by modifying the contents of '/src/components/Home.js'</p>
+				<p>Get started by modifying the contents of '/src/components/App.js'</p>
 			</div>
 		);
 	}
